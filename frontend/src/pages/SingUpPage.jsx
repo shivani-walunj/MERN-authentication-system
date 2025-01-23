@@ -10,7 +10,7 @@ const SingUpPage = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate;
+  const navigate = useNavigate();
 
   const { signup, error, isLoading } = useAuthStore();
 
@@ -61,9 +61,9 @@ const SingUpPage = () => {
           {error && <p className="text-red-500 font-semibold mt-2">{error}</p>}
           <PasswordStrengthMeter password={password} />
           <motion.button
+            className="mt-5 w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition duration-200"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="mt-5 w-full py-3 px-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-bold rounded-lg shadow-lg hover:from-green-600 hover:to-emerald-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition duration-200"
             type="submit"
             disabled={isLoading}
           >
